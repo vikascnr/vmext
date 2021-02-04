@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
@@ -10,9 +5,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: TerraformInstaller@0
+- task: ms-devlabs.custom-terraform-tasks.custom-terraform-installer-task.TerraformInstaller@0
+  displayName: 'Install Terraform 0.13.2'
   inputs:
-    terraformVersion: 'latest'
+    terraformVersion: 0.13.2
+    
 - task: TerraformCLI@0
   inputs:
     command: 'init'
