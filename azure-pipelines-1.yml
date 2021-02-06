@@ -33,3 +33,8 @@ steps:
     commandOptions: '-auto-approve'
     allowTelemetryCollection: true
 
+- task: TerraformCLI@0
+  inputs:
+    command: 'destroy'
+    commandOptions: '-auto-approve'
+    allowTelemetryCollection: true
